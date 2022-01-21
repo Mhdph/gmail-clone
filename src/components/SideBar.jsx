@@ -47,7 +47,7 @@ function SideBar() {
       <div className="hangouts">
         <div className="hangouts__left">
           <Avatar />
-          <p>Mahdi</p>
+          <p>Arman</p>
           <IconButton>
             <KeyboardArrowDownIcon />
           </IconButton>

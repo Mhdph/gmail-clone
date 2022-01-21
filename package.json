@@ -2,7 +2,7 @@
   "name": "gmail-clone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://mhdph.github.io/gmail-clone",
+  "homepage": "http://ari.github.io/gmail-clone",
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
