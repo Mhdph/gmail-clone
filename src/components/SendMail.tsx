@@ -12,6 +12,8 @@ import CreateIcon from "@mui/icons-material/Create";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { IconButton } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { closeSendMessage } from "../features/counter/MailSlice";
 import { useForm } from "react-hook-form";
 
 type SendMailProps = {
@@ -21,6 +23,7 @@ type SendMailProps = {
 };
 
 function SendMail() {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -30,38 +33,43 @@ function SendMail() {
   const onSubmit = (data: SendMailProps) => console.log(data);
   console.log(watch("example"));
   return (
-    <div className="sendMail">
-      <div className="sendMail__header">
-        <h3>New Message</h3>
-        <CloseIcon className="sendMail__close" />
+    <div className="absolute bottom-0 right-12 w-[60%] h-[80%] max-w-[550px] max-h-[540px] rounded-t-lg flex flex-col border border-solid border-gray-100 ">
+      <div className="rounded-t-lg p-3 flex justify-between items-center text-gray-800 bg-[#404040]">
+        <h3 className="text-sm text-gray-800">New Message</h3>
+        <CloseIcon
+          className="cursor-pointer"
+          onClick={() => dispatch(closeSendMessage())}
+        />
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="flex flex-1 flex-col " onSubmit={handleSubmit(onSubmit)}>
         <input
+          className="h-8 p-2.5 border-b border-solid border-red-100 outline-none"
           type="text"
           placeholder="To"
           {...register("to", { required: true })}
         />
         {errors.to && <span>This field is required</span>}
         <input
+          className="h-8 p-2.5 border-b border-solid border-red-100 outline-none"
           placeholder="Subject"
           type="text"
           {...register("subject", { required: true })}
         />
         {errors.subject && <span>This field is required</span>}
         <input
-          className="sendMail__message"
+          className="flex-1"
           placeholder="Message"
           type="text"
           {...register("message", { required: true })}
         />
         {errors.message && <span>This field is required</span>}
 
-        <div className="sendMail__options">
-          <div className="sendMail__options__left">
+        <div className="flex items-center justify-center ">
+          <div className="flex items-center pl-1">
             <Button
               color="primary"
-              className="sendMail__send"
+              className="bg-[#4079ed] capitalize m-4"
               type="submit"
               variant="contained"
             >
@@ -93,7 +101,7 @@ function SendMail() {
               <CreateIcon />
             </IconButton>
           </div>
-          <div className="sendMail__options__right">
+          <div className="flex pr-2.5">
             <IconButton>
               <MoreVertIcon />
             </IconButton>

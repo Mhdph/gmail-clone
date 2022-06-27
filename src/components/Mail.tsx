@@ -19,9 +19,9 @@ function Mail() {
     navigate("/");
   }
   return (
-    <div className="mail">
-      <div className="mail__tools">
-        <div className="mail__toolsLeft">
+    <div className="flex bg-gray-200">
+      <div className="flex justify-between bg-white">
+        <div className="flex">
           <IconButton onClick={handleClick}>
             <ArrowBackIcon />
           </IconButton>
@@ -59,15 +59,15 @@ function Mail() {
           </IconButton>
         </div>
       </div>
-      <div className="mail__body">
-        <div className="mail__bodyHeader">
-          <h2>Subject</h2>
-          <LabelImportantIcon className="mail__important" />
+      <div className="flex flex-col m-7 bg-white p-5 h-screen shadow ">
+        <div className="flex items-center border-b border-solid border-gray-300 p-5 relative">
+          <h2 className="m-5">Subject</h2>
+          <LabelImportantIcon className="text-[#e8ab02] pr-2" />
           <p>Title</p>
-          <p className="mail__time">10pm</p>
+          <p className="absolute top-6 right-0 text-xs text-gray-600">10pm</p>
         </div>
         <div className="mail__meassage">
-          <p>this is a Message</p>
+          <p className="p-2.5 mr-5 break-words">this is a Message</p>
         </div>
       </div>
     </div>

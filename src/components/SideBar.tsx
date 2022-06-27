@@ -18,14 +18,14 @@ import { openSendMessage } from "../features/counter/MailSlice";
 function SideBar() {
   const dispatch = useDispatch();
   return (
-    <div className="sidebar">
-      <Button
+    <div className="flex-[0.3] min-w-[300px] pr-5">
+      <button
         startIcon={<AddIcon fontSize="large" />}
-        className="sidebar_compose"
+        className="my-4 ml-2.5 capitalize h-10 text-gray-500 p-4 rounded-3xl shadow-md"
         onClick={() => dispatch(openSendMessage())}
       >
         Compose
-      </Button>
+      </button>
       <SideBarOption
         Icon={InboxIcon}
         title="Inbox"
@@ -37,32 +37,32 @@ function SideBar() {
       <SideBarOption Icon={SendIcon} title="Sent" number={13} />
       <SideBarOption Icon={NoteIcon} title="Drafts" number={2} />
       <SideBarOption Icon={KeyboardArrowDownIcon} title="More" />
-      <div className="sidebar__footer">
-        <h3 className="sidebarMeet">Meet</h3>
+      <div className="border-y-[0.1px] border-gray-200 border-solid">
+        <h3 className="text-[#292a2d] p-2.5 text-base">Meet</h3>
         <SideBarOption Icon={VideocamIcon} title="New meeting" />
         <SideBarOption Icon={KeyboardIcon} title="Join a meeting" />
       </div>
-      <h3 className="sidebarMeet">Hangouts</h3>
-      <div className="hangouts">
-        <div className="hangouts__left">
+      <h3 className="text-[#292a2d] p-2.5 text-base">Hangouts</h3>
+      <div className="flex items-center justify-between pb-1">
+        <div className="flex items-center pl-4">
           <Avatar />
-          <p>Arman</p>
+          <p className="pl-2.5">Mahdi</p>
           <IconButton>
             <KeyboardArrowDownIcon />
           </IconButton>
         </div>
-        <div className="hangouts__right">
+        <div className="flex pr-5">
           <IconButton>
             <AddIcon />
           </IconButton>
         </div>
       </div>
-      <div className="footer-text sidebar__footer">
+      <div className="flex flex-col justify-center items-center py-5 border-[0.1px] border-[#e7e7e7] border-solid">
         <p>No recent chats</p>
-        <span>start a new one</span>
+        <span className="text-[#1155cc] ">start a new one</span>
       </div>
 
-      <div className="sidebar_foot">
+      <div className="flex justify-center">
         <IconButton>
           <PersonIcon />
         </IconButton>

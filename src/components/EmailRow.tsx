@@ -18,22 +18,25 @@ const EmailRow: React.FC<EmailRowProps> = ({
 }) => {
   const history = useNavigate();
   return (
-    <div onClick={() => history("/mail")} className="emailRow">
-      <div className="emailRow__options">
+    <div
+      onClick={() => history("/mail")}
+      className="flex items-center h-12 border-b solid bg-white cursor-pointer z-50 hover:border-t hover:border-solid hover:border-gray-100"
+    >
+      <div className="flex">
         <Checkbox />
         <IconButton>
           <StarOutlineIcon />
         </IconButton>
       </div>
-      <h3 className="emailRow__title">{title}</h3>
-      <div className="emailRow__message">
-        <h4>
+      <h3 className="flex-[0.15] text-sm">{title}</h3>
+      <div className="flex flex-[0.8] items-center text-xs">
+        <h4 className="w-[700px] overflow-hidden text-ellipsis px-1 whitespace-nowrap">
           {subject}
-          {""}
-          <span className="emailRow__description"> - {description}</span>
+
+          <span className="font-normal text-gray-600"> - {description}</span>
         </h4>
       </div>
-      <div className="emailRow__time">{time}</div>
+      <div className="pr-4 text-[9px] font-bold">{time}</div>
     </div>
   );
 };

@@ -11,9 +11,9 @@ import { selectSendMessageIsOpen } from "./features/counter/MailSlice";
 function App() {
   const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
   return (
-    <div className="App">
+    <div className="h-screen">
       <Header />
-      <div className="app_body">
+      <div className="flex h-screen">
         <SideBar />
         <Router>
           <Routes>

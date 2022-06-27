@@ -13,8 +13,8 @@ import Section from "./Section";
 import EmailRow from "./EmailRow";
 function EmailList() {
   return (
-    <div className="emailList">
-      <div className="emailList__settings">
+    <div className="flex-1 overflow-scroll">
+      <div className="sticky top-0 flex pr-2.5 justify-between bg-white z-50 border border-solid border-white">
         <div className="emailList_settingLeft">
           <Checkbox />
           <IconButton>
@@ -37,7 +37,7 @@ function EmailList() {
           </IconButton>
         </div>
       </div>
-      <div className="email-section">
+      <div className="sticky top-0 flex bg-white z-50 border-b border-solid border-white">
         <Section
           Icon={InboxIcon}
           title="Primary"

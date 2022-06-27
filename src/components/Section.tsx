@@ -10,14 +10,16 @@ type SectionProps = {
 const Section: React.FC<SectionProps> = ({ Icon, title, color, selected }) => {
   return (
     <div
-      className={`section ${selected && "section--selected"}`}
+      className={`flex items-center border-b-2 p-4 min-w-[200px] cursor-pointer text-gray-600 border-0 hover:bg-gray-300 hover:border-[3px] ${
+        selected && "bg-gray-300 rounded"
+      }`}
       style={{
         borderBottom: `3px solid ${color}`,
         color: `${selected && color}`,
       }}
     >
       <Icon />
-      <h4>{title}</h4>
+      <h4 className="text-sm ml-4">{title}</h4>
     </div>
   );
 };
