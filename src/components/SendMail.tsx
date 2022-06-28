@@ -13,7 +13,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { IconButton } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { closeSendMessage } from "../features/counter/MailSlice";
+import { closeSendMessage } from "../features/MailSlice";
 import { useForm } from "react-hook-form";
 
 type SendMailProps = {

@@ -14,7 +14,7 @@ import { Avatar, IconButton } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import DuoIcon from "@mui/icons-material/Duo";
 import { useDispatch } from "react-redux";
-import { openSendMessage } from "../features/counter/MailSlice";
+import { openSendMessage } from "../features/MailSlice";
 function SideBar() {
   const dispatch = useDispatch();
   return (
