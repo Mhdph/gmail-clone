@@ -1,16 +1,7 @@
-import { initializeApp, getApps } from "firebase/app";
-import {
-  GoogleAuthProvider,
-  getAuth,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signOut,
-} from "firebase/auth";
-
+import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-const googleProvider = new GoogleAuthProvider();
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+
 const firebaseConfig = {
   apiKey: "AIzaSyChsrq9SkLEMfGIYdW1UrsBLVF9VI5A3jA",
   authDomain: "clone-fd910.firebaseapp.com",
@@ -20,20 +11,11 @@ const firebaseConfig = {
   appId: "1:485336185250:web:53337bf15cec48c10edafb",
 };
 
-const app = getApps().length > 0 ? getApps() : initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
 
 const auth = getAuth();
-const db = getFirestore();
+const googleProvider = new GoogleAuthProvider();
 
-export {
-  auth,
-  db,
-  GoogleAuthProvider,
-  googleProvider,
-  getAuth,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signOut,
-};
+export { auth, db, GoogleAuthProvider, googleProvider, getAuth };
