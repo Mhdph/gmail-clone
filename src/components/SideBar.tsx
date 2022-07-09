@@ -15,17 +15,18 @@ import PersonIcon from "@mui/icons-material/Person";
 import DuoIcon from "@mui/icons-material/Duo";
 import { useDispatch } from "react-redux";
 import { openSendMessage } from "../features/MailSlice";
+
 function SideBar() {
   const dispatch = useDispatch();
   return (
     <div className="flex-[0.3] min-w-[300px] pr-5">
-      <button
-        startIcon={<AddIcon fontSize="large" />}
-        className="my-4 ml-2.5 capitalize h-10 text-gray-500 p-4 rounded-3xl shadow-md"
+      <div
         onClick={() => dispatch(openSendMessage())}
+        className="my-4 flex cursor-pointer items-center lg:w-[40%] ml-2.5 capitalize h-10 text-gray-500 p-4 rounded-3xl shadow-md"
       >
-        Compose
-      </button>
+        <AddIcon fontSize="large" />
+        <button>Compose</button>
+      </div>
       <SideBarOption
         Icon={InboxIcon}
         title="Inbox"
