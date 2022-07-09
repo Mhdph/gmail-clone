@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = () => {
           </IconButton>
           <img
             className="ml-1 h-12 object-contain"
-            src="https://logo-download.com/wp-content/data/images/svg/Gmail-logo.svg"
+            src="https://i.ibb.co/wLmWwv1/logo.png"
             alt=""
           />
         </div>
