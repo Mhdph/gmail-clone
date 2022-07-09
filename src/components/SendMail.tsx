@@ -33,45 +33,46 @@ function SendMail() {
   const onSubmit = (data: SendMailProps) => console.log(data);
   console.log(watch("example"));
   return (
-    <div className="absolute bottom-0 right-12 w-[60%] h-[80%] max-w-[550px] max-h-[540px] rounded-t-lg flex flex-col border border-solid border-gray-100 ">
-      <div className="rounded-t-lg p-3 flex justify-between items-center text-gray-800 bg-[#404040]">
-        <h3 className="text-sm text-gray-800">New Message</h3>
+    <div className="absolute bottom-0 right-12 w-[40%] h-[70%] max-w-[550px] max-h-[540px] rounded-t-lg flex flex-col border border-solid border-gray-100 ">
+      <div className="rounded-t-lg p-3 flex justify-between items-center text-gray-200 bg-[#404040]">
+        <h3 className="text-sm text-white">New Message</h3>
         <CloseIcon
           className="cursor-pointer"
           onClick={() => dispatch(closeSendMessage())}
         />
       </div>
 
-      <form className="flex flex-1 flex-col " onSubmit={handleSubmit(onSubmit)}>
+      <form className="flex flex-1 flex-col" onSubmit={handleSubmit(onSubmit)}>
         <input
-          className="h-8 p-2.5 border-b border-solid border-red-100 outline-none"
+          className="h-8 p-2.5 border-b border-solid border-gray-200 outline-none"
           type="text"
           placeholder="To"
           {...register("to", { required: true })}
         />
         {errors.to && <span>This field is required</span>}
         <input
-          className="h-8 p-2.5 border-b border-solid border-red-100 outline-none"
+          className="h-8 p-2.5 border-b border-solid border-gray-200 active:outline-none  outline-none"
           placeholder="Subject"
           type="text"
           {...register("subject", { required: true })}
         />
         {errors.subject && <span>This field is required</span>}
         <input
-          className="flex-1"
+          className="flex-1 border-b border-solid border-gray-200 outline-none"
           placeholder="Message"
           type="text"
           {...register("message", { required: true })}
         />
         {errors.message && <span>This field is required</span>}
 
-        <div className="flex items-center justify-center ">
+        <div className="flex py-2 items-center justify-center ">
           <div className="flex items-center pl-1">
             <Button
               color="primary"
               className="bg-[#4079ed] capitalize m-4"
               type="submit"
               variant="contained"
+              onClick={() => dispatch(closeSendMessage())}
             >
               Send
             </Button>
